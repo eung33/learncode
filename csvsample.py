@@ -1,15 +1,37 @@
 import csv
 
-# f = open('sample.csv', 'w', encoding='utf-8', newline='')
-# wr = csv.writer(f)
-# wr.writerows([[1,2,3],[4,5,6],[7,8,9]])
-# f.close()
+
 
 
 f = open('sample.csv', 'r', encoding='utf-8')
 rd = csv.reader(f)
+lines = []
+array = []
+
 #print(rd)
-for i in rd:
-    print(i)
-    print(type(i))
-f.close
+for line in rd:
+    print(line[0])
+#    print(type(rd))
+    lines.append(line[0][12])
+
+print(lines)
+
+# for i in range(0,4):
+#     a = lines[0][i]
+#     print(a)
+
+# print(a)
+
+# print(type(lines))
+# print(lines[0][1])
+# a = lines[0][1]
+# print(type(a))
+
+
+# for i in range(lines[0])
+#     print(lines[i][0])
+
+f = open('sample2.csv', 'w', encoding='utf-8', newline='')
+wr = csv.writer(f)
+wr.writerows(lines)
+f.close()
