@@ -132,10 +132,49 @@
 # trip_to.detail()
 
 
-from travel import *
-trip_to = vietnam.VietnamPackage()
-trip_to.detail()
+# from travel import *
+# trip_to = vietnam.VietnamPackage()
+# trip_to.detail()
+
+# # report 만들기
+# for i in range(1, 11):
+#     with open(str(i) + "주차.txt", "w", encoding="utf8") as report_file:
+#         report_file.write("- {0} 주차 주간 보고 -".format(i))
+#         report_file.write("\n부서 :")
+#         report_file.write("\n이름 :")
+#         report_file.write("\n업무 요약 :")
 
 
+# class 공부 with starcraft
 
+class Unit:
+    def __init__(self, name, hp, damage):
+        self.name = name
+        self.hp = hp
+        self.damage = damage
+        print("{0} 유닛이 생성 되었습니다.".format(self.name))
+        print("체력 {0}, 공격력 {1}".format(self.hp, self.damage))
+
+# marine1 = Unit("마린", 40, 5)
+# marine2 = Unit("마린", 40, 5)
+# tank = Unit("탱크", 150, 35)
+
+# wraith1 = Unit("레이스", 80, 5)
+# print("유닛 이름: {0}, 공격력 : {1}".format(wraith1.name, wraith1.damage))
+
+
+class AttackUnit:
+    def __init__(self, name, hp, damage):
+        self.name = name
+        self.hp = hp
+        self.damage = damage
+    
+    def attack(self, location):
+        print("{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]"\
+            .format(self.name, location, self.damage))
+
+    def damage(self, damage):
+        print("{0} : {1} 데미지를 입었습니다.".format(self.name, damage))
+        self.hp -= damage
+        
 
