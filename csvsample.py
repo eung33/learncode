@@ -32,6 +32,7 @@ print(lines)
 #     print(lines[i][0])
 
 f = open('sample2.csv', 'w', encoding='utf-8', newline='')
-wr = csv.writer(f)
+wr = csv.writer(f)      
 wr.writerows(lines)
+
 f.close()
