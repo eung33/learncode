@@ -1,13 +1,7 @@
-vip_names = ['Newton', 'Euler', 'Gauss']
-print(vip_names)
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
 
-alphabet = ['b', 'a', 'c', 'd', 'q']
-print(alphabet)
-alphabet.sort()
-print(alphabet)  
-
-
-
-import math
-
-math.floor(math.pi)
+with urlopen('https://www.naver.com') as resopnse:
+    soup = BeautifulSoup(resopnse, 'html.parser')
+    for anchor in soup.select("span.ah_k"):
+        print(anchor.get_text())
